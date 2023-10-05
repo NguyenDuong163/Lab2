@@ -1,0 +1,5 @@
+Report 1: Nếu dòng 'setTimer0(1000)' bị xóa, thì đèn led sẽ không chớp tắt nữa mà sẽ chỉ sáng. Lý do là nếu xóa dòng 'setTimer0(1000)' thì sẽ không có lệnh gọi hàm, từ đó timer0_flag=0 --> không toggle đèn led.
+
+Report 2: Nếu dòng 'setTimer0(1000)' chuyển thành 'setTimer0(1)' thì cũng sẽ giống như khi ta xóa dòng 'setTimer0(1000)'. Bởi vì khi đó timer0_counter=0 (sai điều kiện) --> timer0_flag=0.
+
+Report 3: Nếu dòng 'setTimer0(1)' chuyển thành 'setTimer0(10)' thì đèn led sẽ chớp tắt như khi có dòng 'setTimer0(1000)' bởi vì lúc này timer0_counter=1 --> timer0_flag=1.
